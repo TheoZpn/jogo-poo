@@ -5,8 +5,8 @@ import javax.swing.JFrame;
 import br.ifpr.jogo.modelo.Fase;
 
 
-public class principal extends JFrame{
-    public principal(){
+public class Principal extends JFrame{
+    public Principal(){
         Fase fase = new Fase();
         super.add(fase);
         super.setTitle("Jogo do IFPR - Campus Paranavaí");

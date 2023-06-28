@@ -9,7 +9,7 @@ public class Inimigo {
     private Image imagem;
     private int larguraImagem;
     private int alturaImagem;
-    private static int VELOCIDADE = 2;
+    private static int VELOCIDADE = 5;
 
     public Inimigo(int xAleatorio, int yAleatorio) {
         this.posicaoEmX = xAleatorio;
@@ -17,7 +17,7 @@ public class Inimigo {
     }
 
     public void carregar() {
-        ImageIcon carregando = new ImageIcon("recursos\\inimigo.png");
+        ImageIcon carregando = new ImageIcon("recursos\\meteoro2.png");
         this.imagem = carregando.getImage();
         this.alturaImagem = this.imagem.getWidth(null);
         this.larguraImagem = this.imagem.getHeight(null);
