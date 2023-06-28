@@ -35,7 +35,7 @@ public void atirar() {
 }
 
 public void carregar(){
-    ImageIcon carregando = new ImageIcon("recursos\\personagem3.png");
+    ImageIcon carregando = new ImageIcon("recursos\\personagem4.png");
     this.imagem = carregando.getImage();
     this.alturaImagem = this.imagem.getWidth(null);
     this.larguraImagem = this.imagem.getHeight(null);

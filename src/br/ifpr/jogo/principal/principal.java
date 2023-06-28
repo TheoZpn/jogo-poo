@@ -10,7 +10,7 @@ public class principal extends JFrame{
         Fase fase = new Fase();
         super.add(fase);
         super.setTitle("Jogo do IFPR - Campus Paranavaí");
-        super.setSize(1000, 666); 
+        super.setSize(1820, 980); 
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         super.setLocationRelativeTo(null);
         super.setResizable(false);
