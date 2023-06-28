@@ -22,4 +22,54 @@ public class Tiro {
         this.alturaImagem = this.imagem.getWidth(null);
         this.larguraImagem = this.imagem.getHeight(null);
     }
+    public void atualizar() {
+    this.posicaoEmX = this.posicaoEmX + VELOCIDADE;
+    }
+
+
+    public int getPosicaoEmX() {
+        return this.posicaoEmX;
+    }
+
+    public void setPosicaoEmX(int posicaoEmX) {
+        this.posicaoEmX = posicaoEmX;
+    }
+
+    public int getPosicaoEmY() {
+        return this.posicaoEmY;
+    }
+
+    public void setPosicaoEmY(int posicaoEmY) {
+        this.posicaoEmY = posicaoEmY;
+    }
+
+    public Image getImagem() {
+        return this.imagem;
+    }
+
+    public void setImagem(Image imagem) {
+        this.imagem = imagem;
+    }
+
+    public int getLarguraImagem() {
+        return this.larguraImagem;
+    }
+
+    public void setLarguraImagem(int larguraImagem) {
+        this.larguraImagem = larguraImagem;
+    }
+
+    public int getAlturaImagem() {
+        return this.alturaImagem;
+    }
+
+    public void setAlturaImagem(int alturaImagem) {
+        this.alturaImagem = alturaImagem;
+    }
+
 }
+
+
+//---------------------------------
+
+
