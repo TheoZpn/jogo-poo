@@ -50,6 +50,13 @@ public class FaseUm extends Fase{
                 // Desenhar o tiro na nossa tela.
                 graficos.drawImage(tiro.getImagem(), tiro.getPosicaoEmX(), tiro.getPosicaoEmY(), this);
         }
+
+            ArrayList<SuperTiro> superTiros = personagem.getSuperTiros();
+            for (SuperTiro superTiro : superTiros) {
+                superTiro.carregar();
+                graficos.drawImage(superTiro.getImagem(), superTiro.getPosicaoEmX(), superTiro.getPosicaoEmY(), this);
+            }
+
             // Criando um laço de repetição (foreach). Iremos percorrer toda a lista.
             for (Inimigo inimigo : inimigos) {
                 // Carregando imagem do objeto inimigo pelo método carregar.
@@ -85,6 +92,14 @@ public class FaseUm extends Fase{
                     tiro.setEhVisivel(false);
             }
         }
+            ArrayList<SuperTiro> superTiros = this.personagem.getSuperTiros();
+            for (int s = 0; s < superTiros.size(); s++) {
+                SuperTiro superTiro = superTiros.get(s);
+                Rectangle formaSuper =superTiro.getRectangle();
+                if (formaInimigo.intersects(formaSuper)) {
+                    inimigo.setEhVisivel(false);
+                }
+            }        
     }
 }
 
@@ -93,6 +108,8 @@ public class FaseUm extends Fase{
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE)
             personagem.atirar();
+        if(e.getKeyCode() == KeyEvent.VK_Q)
+                personagem.superAtirar();            
         else
             personagem.mover(e);
     }
@@ -121,6 +138,20 @@ public class FaseUm extends Fase{
                 // Atualizar a posição do tiro.
                 tiro.atualizar();
     }
+        ArrayList<SuperTiro> superTiros = personagem.getSuperTiros();
+        // Criando um laço de repetição (for). Iremos percorrer toda a lista.
+        for (int i = 0; i < superTiros.size(); i++) {
+            // Obter o objeto tiro da posicao i do ArrayList
+            SuperTiro superTiro = superTiros.get(i);
+            // Verificar se (if) a posição do x (tiro.getPosicaoEmX()) é maior do que a
+            // largura da nossa janela
+            if (superTiro.getPosicaoEmX() > LARGURA_DA_JANELA || !superTiro.getEhVisivel())
+                // Remover da lista se estiver fora do campo de visão (LARGURA_DA_JANELA)
+                superTiros.remove(superTiro);
+            else
+                // Atualizar a posição do tiro.
+                superTiro.atualizar();
+        }    
         // Criando um laço de repetição (for). Iremos percorrer toda a lista.
         for (int i = 0; i < this.inimigos.size(); i++) {
             // Obter o objeto inimigo da posicao i do ArrayList
