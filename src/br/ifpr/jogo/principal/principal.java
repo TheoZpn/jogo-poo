@@ -2,12 +2,12 @@ package br.ifpr.jogo.principal;
 
 import javax.swing.JFrame;
 
-import br.ifpr.jogo.modelo.Fase;
+import br.ifpr.jogo.modelo.FaseUm;
 
 
-public class Principal extends JFrame{
-    public Principal(){
-        Fase fase = new Fase();
+public class principal extends JFrame{
+    public principal(){
+        FaseUm fase = new FaseUm();
         super.add(fase);
         super.setTitle("Jogo do IFPR - Campus Paranavaí");
         super.setSize(1820, 980); 
